@@ -6,19 +6,17 @@ export default (
     <cx>
         <div controller={Controller}>
             <div class="main">
-                <div class="sidebar">
-                
+                <div id="sidebar">
+
                 </div>
-                <div class="container">
-                    <div class="item item1">
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div class="item item2"></div>
-                    <div class="item item3"></div>
-                    <div class="item item4"></div>
-                    <div class="item item5"></div>
-                    <div class="item item6"></div>
+                <div class="contents">  
+                    <div class="content" id="content1">Content 1</div>
+                    <div class="content" id="content2">Content 2</div>
+                    <div id="content-space"></div>
+                    <div class="content" id="content3">Content 3</div>
+                    <div class="content" id="content4">Content 4</div>
+                    <div class="content" id="content5">Content 5</div>
+                    <div class="content" id="content6">Content 6</div>
                 </div>
             </div>
             <ContentPlaceholder />

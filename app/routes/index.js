@@ -19,7 +19,7 @@ export default () => (
                     1) some components in the task are identical or at least similar - https://www.figma.com/file/WOZ3FCYedqbYdZ5K8Ng1Nn/CSS-Training?node-id=77%3A576
                     2) to avoid having everything in this file, thus making it difficult to find and understand what is going on in the code here :)
             */}
-            <h1 text="This is the place where you add stuff." />
+            {/* <h1 text="This is the place where you add stuff." /> */}
         </Sandbox>
     </cx>
 );

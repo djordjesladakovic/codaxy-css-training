@@ -1,6 +1,6 @@
 {
   "name": "cx-app-tpl",
-  "version": "1.0.0",  
+  "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --config config/webpack.dev.js --open",

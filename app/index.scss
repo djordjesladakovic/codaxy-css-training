@@ -1,7 +1,70 @@
 $cx-include-global-rules: true;
 
+//ovdje varijable
+
+$cx-default-palette-colors: rgb(228, 36, 46) rgb(71, 18, 218) rgb(215, 221, 204) rgba(103, 58, 183, 1)
+   rgb(11, 15, 39) rgb(128, 155, 177) rgba(3, 169, 244, 1) rgba(0, 188, 212, 1) rgba(0, 150, 136, 1)
+   rgba(76, 175, 80, 1) rgba(139, 195, 74, 1) rgba(205, 220, 57, 1) rgba(255, 235, 59, 1) rgba(255, 193, 7, 1)
+   rgba(255, 152, 0, 1) rgba(255, 87, 34, 1) !default;
+
 @import "~cx/src/variables";
+
+//ovdje mape
+
+
+$cx-button-mods: cx-deep-map-merge($cx-button-mods, (
+	primary: (
+		default: (
+            width: 150px,
+            background: #397289,
+            border-radius: 5px,
+            color: white,
+            font-size: 14px,
+            height: 32px,
+            position: inherit,
+        ),
+        hover: (
+            background: #3c85a1,
+        ),
+        active: (
+            background: #3b9dc4,
+        )
+    ), 
+    secondary: (
+        default: (
+            width: 150px,
+            background: #FFF,
+            border: 1px solid #397289,
+            border-radius: 5px,
+            color: #397289,
+            font-size: 14px,
+            height: 32px,
+            position: inherit,
+        ),
+        hover: (
+            background: #e3e3e4,
+        ),
+        active: (
+            background: #c1c2c2,
+        )
+    ),
+    hollow: (
+        default: (
+            background: none,
+            align-self: flex-end,
+            margin: 10px 32px,
+            font-size: 14px,
+            color: #397289,
+        )
+    )
+));
+
 @import "~cx/src/index";
+
+//ovdje custom klase
+.cxb-svg {
+    height: 100%;
+}
 
 @import "components/index";
 @import "layout/index";

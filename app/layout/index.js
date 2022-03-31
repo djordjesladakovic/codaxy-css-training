@@ -1,4 +1,4 @@
-import { Button, Link } from "cx/widgets";
+import { Button } from "cx/widgets";
 import { ContentPlaceholder } from "cx/ui";
 import Controller from "./Controller";
 
@@ -18,7 +18,7 @@ export default (
                             <div style="margin-top: 24px;" class="detailed-info">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor nesto nesto nesto nesto nesto123
                             </div>
-                            <Button class="primary-button" style="margin-top: 24px;">Build something</Button>
+                            <Button baseClass="primaryButton" style="margin-top: 24px;">Build something</Button>
                         </div>
                     </div>
                     <div class="content" id="content2">Content 2</div>

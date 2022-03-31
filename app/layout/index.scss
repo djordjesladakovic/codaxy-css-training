@@ -113,16 +113,6 @@
     }  
 }
 
-.primary-button {
-    background: #397289;
-    font-size: 14px;
-    color: #FFF;
-    width: 150px;
-    height: 32px;
-    border-radius: 4px;
-    position: inherit;
-}
-
 .header {
     font-size: 20px;
     font-family: 'Muli';
@@ -137,3 +127,25 @@
     overflow: hidden; 
     text-overflow: ellipsis; 
 }
+
+$primarybutton-state-style-map: cx-merge-state-style-maps(
+  $cx-button-state-style-map, (
+    default: (
+        width: 150px,
+        background: #397289,
+        border-radius: 5px,
+        color: white,
+        font-size: 14px,
+        height: 32px,
+        position: inherit,
+    ),
+    hover: (
+        background: #3c85a1,
+    ),
+    active: (
+        background: #3b9dc4,
+    )
+  )
+);
+
+@include cx-button('primaryButton', $primarybutton-state-style-map);

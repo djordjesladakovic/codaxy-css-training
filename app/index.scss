@@ -7,6 +7,17 @@ $cx-default-palette-colors: rgb(228, 36, 46) rgb(71, 18, 218) rgb(215, 221, 204)
    rgba(76, 175, 80, 1) rgba(139, 195, 74, 1) rgba(205, 220, 57, 1) rgba(255, 235, 59, 1) rgba(255, 193, 7, 1)
    rgba(255, 152, 0, 1) rgba(255, 87, 34, 1) !default;
 
+//grid style
+$cx-default-grid-header-font-size: 16px;
+$cx-default-grid-font-size: 14px;
+$cx-default-grid-header-color: #464F60;
+$cx-default-grid-header-border-color: #FFF;
+$cx-default-grid-header-background-color: #FFF;
+$cx-default-grid-data-alternate-background-color: #8686860D;
+
+$cx-default-border-color: #E9EDF5;
+$cx-default-grid-data-padding: 10px;
+
 @import "~cx/src/variables";
 
 //ovdje mape
@@ -59,7 +70,26 @@ $cx-button-mods: cx-deep-map-merge($cx-button-mods, (
     )
 ));
 
+$grid-header-state-style-map: cx-merge-state-style-maps(
+    $cx-grid-header-state-style-map, (
+        default: (
+            border-bottom: 1px solid $cx-default-border-color,
+        ),
+        hover: (
+            background-color: darken($cx-default-grid-header-background-color, 1),
+        ),
+        sorted: (
+            background-color: darken($cx-default-grid-header-background-color, 2),
+        ),
+        sorted-hover: (
+            background-color: darken($cx-default-grid-header-background-color, 3),
+        ),
+    )
+);
+
 @import "~cx/src/index";
+
+@include cx-grid('gridHeader', $grid-header-state-style-map);
 
 //ovdje custom klase
 .cxb-svg {

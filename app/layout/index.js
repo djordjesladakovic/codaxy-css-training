@@ -1,4 +1,4 @@
-import { Button } from "cx/widgets";
+import { Button, Grid } from "cx/widgets";
 import { ContentPlaceholder, KeySelection, Repeater } from "cx/ui";
 import Controller from "./Controller";
 import { Svg } from "cx/svg";
@@ -140,7 +140,30 @@ export default (
                             </Svg>
                         </div>
                     </div>
-                    <div class="content" id="content6">Content 6</div>
+                    <div class="content" id="content6">
+                        <div class="table-info">
+                            <div class="header">
+                                Customer Overview
+                            </div>
+                            <Button mod="secondary">Add Customer</Button>
+                        </div>
+                        <div class="table">
+                            <Grid baseClass="gridHeader"
+                                records-bind="$page.records"
+                                mod="responsive"
+                                scrollable
+                                columns={[
+                                { header: "Name", field: "fullName", sortable: true },
+                                { header: "Continent", field: "continent", sortable: true },
+                                { header: "Browser", field: "browser", sortable: true },
+                                { header: "OS", field: "os", sortable: true },
+                                { header: "Visits", field: "visits", sortable: true, align: "right" }
+                                ]}
+                                selection={{ type: KeySelection, bind: "$page.selection" }}
+                            />
+                        </div>
+                        
+                    </div>
                 </div>
             </div>
             <ContentPlaceholder />

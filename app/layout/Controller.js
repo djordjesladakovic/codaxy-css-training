@@ -30,5 +30,17 @@ export default class extends Controller {
               v3: Math.random() * 30,
             }))
         );
+
+        this.store.init(
+            "$page.records",
+            Array.from({ length: 30 }).map((v, i) => ({
+              id: i + 1,
+              fullName: (Math.random() + 1).toString(36).substring(7),
+              continent: (Math.random() + 1).toString(36).substring(7),
+              browser: (Math.random() + 1).toString(36).substring(7),
+              os: (Math.random() + 1).toString(36).substring(7),
+              visits: Math.random() * 30
+            }))
+          );
     }
 }

@@ -113,6 +113,22 @@
 
 #content6 {
     grid-area: content6;
+
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+    .table-info {
+        padding: 16px 24px 24px 24px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .table { 
+        overflow: hidden;
+        display: flex;
+    }
 }
 
 
@@ -125,7 +141,7 @@
     .contents {
         margin-top: 50px;
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 0.5fr 0.5fr 1fr 1fr;
         grid-template-areas: 
             "content1"
             "content2"
@@ -133,7 +149,7 @@
             "content4"
             "content5"
             "content6";
-        height: 300vh;
+        height: 400vh;
 
         #content1 {
             flex-direction: column;

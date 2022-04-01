@@ -19,7 +19,7 @@ export default (
         <div controller={Controller}>
             <div class="main">
                 <div id="sidebar">
-                    <div class="sidebar-header">
+                    <div class="sidebar-logo">
                         <div class="company-info">
                             <div class="logo">
                                 <img src="/assets/logo.png"></img>
@@ -31,6 +31,8 @@ export default (
                                 <img src="/assets/left-arrow.png"></img>
                             </div>
                         </div>
+                    </div>    
+                    <div class="sidebar-header">    
                         <div class="user-info">
                             <div class="user-photo">
                                 <img src="/assets/avatar.png"></img>

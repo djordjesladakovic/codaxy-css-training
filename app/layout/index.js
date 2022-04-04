@@ -18,16 +18,19 @@ export default (
     <cx>
         <div controller={Controller}>
             <div class="main">
-                <div id="sidebar">
+                <div id="sidebar" class={{hiddable: {bind: 'hiddable'}}}>
                     <div class="sidebar-logo">
                         <div class="company-info">
                             <div class="logo">
                                 <img src="/assets/logo.png"></img>
                             </div>
-                            <div class="company-name">
+                            <div class="company-name hiddable">
                                 <img src="/assets/company-name.png"></img>
                             </div>
-                            <div class="collapse">
+                            <div class="collapse" onClick={(event, {store}) => {
+                                    console.log('caooo')
+                                    store.toggle('hiddable');
+                                }}>
                                 <img src="/assets/left-arrow.png"></img>
                             </div>
                         </div>
@@ -37,59 +40,83 @@ export default (
                             <div class="user-photo">
                                 <img src="/assets/avatar.png"></img>
                             </div>
-                            <div class="user-details">
+                            <div class="user-details hiddable">
                                 <span class="user-name">Zika Pavlovic</span>
                                 <span class="user-email">zikapavlovic@gmail.com</span>
                             </div>
                         </div>
                         <div class="sidebar-item active">
                             <div class="sidebar-item-details">
-                                <span><i class="fa-solid fa-calendar m-r-10"></i>Dashboard</span>
-                                <span class="sidebar-number sidebar-number-blue">2</span>
+                                <i class="fa-solid fa-calendar icon-margin"></i>
+                                <div class="hiddable">
+                                    <span>Dashboard</span>
+                                    <span class="sidebar-number sidebar-number-blue">2</span>
+                                </div>
                             </div>
                         </div>
                         <div class="sidebar-item">
                             <div class="sidebar-item-details">
-                                <span><i class="fa-solid fa-award m-r-10"></i>Rewards</span>
-                                <span class="sidebar-number sidebar-number-red">2</span>
+                                <i class="fa-solid fa-award icon-margin"></i>
+                                <div class="hiddable">
+                                    <span>Rewards</span>
+                                    <span class="sidebar-number sidebar-number-red">2</span>
+                                </div>
                             </div>
                         </div>
                         <div class="sidebar-item">
                             <div class="sidebar-item-details">
-                                <span><i class="fa-solid fa-location-dot m-r-10"></i>Address</span>
+                                <i class="fa-solid fa-location-dot icon-margin"></i>
+                                <div class="hiddable">
+                                    <span>Address</span>
+                                </div>
                             </div>
                         </div>
                         <div class="sidebar-item">
                             <div class="sidebar-item-details">
-                                <span><i class="fa-solid fa-wallet m-r-10"></i>Payment Methods</span>
+                                <i class="fa-solid fa-wallet icon-margin"></i>
+                                <div class="hiddable">
+                                    <span>Payment Methods</span>
+                                </div>
                             </div>
                         </div>
                         <div class="sidebar-item">
                             <div class="sidebar-item-details">
-                                <span><i class="fa-solid fa-percent m-r-10"></i>Offers</span>
-                                <span class="sidebar-number sidebar-number-green">2</span>
+                                <i class="fa-solid fa-percent icon-margin"></i>
+                                <div class="hiddable">
+                                    <span>Offers</span>
+                                    <span class="sidebar-number sidebar-number-green">2</span>
+                                </div>
                             </div>
                         </div>
                         <div class="sidebar-item">
                             <div class="sidebar-item-details">
-                                <span><i class="fa-solid fa-user-group m-r-10"></i>Refer a Friend</span>
+                                <i class="fa-solid fa-user-group icon-margin"></i>
+                                <div class="hiddable">
+                                    <span>Refer a Friend</span>
+                                </div>
                             </div>
                         </div>
                         <div class="sidebar-item">
                             <div class="sidebar-item-details">
-                                <span><i class="fa-solid fa-phone m-r-10"></i>Support</span>
+                            <i class="fa-solid fa-phone icon-margin"></i>
+                                <div class="hiddable">
+                                    <span>Support</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="sidebar-footer">
-                        <div class="sidebar-help"><i class="fa-regular fa-circle-question m-r-10"></i>Color Scheme</div>
+                        <div class="sidebar-help"><i class="fa-regular fa-circle-question icon-margin"></i>Color Scheme</div>
                         <div class="sidebar-theme">
                             <div class="sidebar-theme-switch sidebar-theme-active">
-                                <i class="fa-solid fa-sun m-r-10"></i>Light
+                                <i class="fa-solid fa-sun icon-margin"></i>Light
                             </div>
                             <div class="sidebar-theme-switch">
-                                <i class="fa-solid fa-moon m-r-10"></i>Dark
+                                <i class="fa-solid fa-moon icon-margin"></i>Dark
                             </div>
+                        </div>
+                        <div class="sidebar-collapse-theme">
+                            <i class="fa-solid fa-cloud-sun"></i>
                         </div>
                     </div>
                 </div>

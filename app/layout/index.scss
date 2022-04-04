@@ -175,6 +175,56 @@ $default-size: 8px;
             background: #B5EBCD;
         }
     }
+
+    .sidebar-collapse-theme {
+        display: none;
+    }
+
+    .hiddable {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+    transition: all 0.1s;
+
+    &.hiddable {
+        flex: unset;
+        width: 50px;
+        transition: all 0.2s;
+        #sidebar {
+        }
+        .company-info {
+            flex-direction: column;
+        }
+        .sidebar-logo {
+            .company-name {
+                display: none;
+            }
+        }
+        .sidebar-header {
+            .user-details {
+                display: none;
+            }
+        }
+        .hiddable {
+            display: none;
+        }
+        .sidebar-footer {
+            .sidebar-help {
+                display: none;
+            }
+            .sidebar-theme {
+                display: none;
+            }
+            .sidebar-collapse-theme {
+                margin-left: 8px;
+                border: 1px solid black;
+                border-radius: 50px;
+                display: unset;
+                padding: 5px;
+            }
+        }
+    }
 }
 
 .content {
@@ -365,6 +415,7 @@ $default-size: 8px;
     text-overflow: ellipsis; 
 }
 
-.m-r-10 {
+.icon-margin {
+    margin-left: $default-size;
     margin-right: 10px;
 }

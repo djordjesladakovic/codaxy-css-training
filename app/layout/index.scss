@@ -326,6 +326,17 @@ $default-size: 8px;
 }
 
 @media only screen and (max-width: 1300px) {
+    .collapse {
+        display: none;
+    }
+    #sidebar {
+        .company-info {
+            .logo {
+                flex: unset;
+            }
+        }
+    }
+
     .main {
         height: 400vh;
     }
@@ -362,7 +373,7 @@ $default-size: 8px;
     .contents {
         margin-top: 50px;
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 0.5fr 0.5fr 1fr 1fr;
+        grid-template-rows: 0.2fr 0.2fr 0.1fr 0.2fr 0.2fr 1fr;
         grid-template-areas: 
             "content1"
             "content2"

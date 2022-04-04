@@ -1,6 +1,7 @@
 $cx-include-global-rules: true;
 
-//ovdje varijable
+//variables
+
 
 $cx-default-palette-colors: rgb(228, 36, 46) rgb(71, 18, 218) rgb(215, 221, 204) rgba(103, 58, 183, 1)
    rgb(11, 15, 39) rgb(128, 155, 177) rgba(3, 169, 244, 1) rgba(0, 188, 212, 1) rgba(0, 150, 136, 1)
@@ -20,7 +21,7 @@ $cx-default-grid-data-padding: 10px;
 
 @import "~cx/src/variables";
 
-//ovdje mape
+//maps
 
 
 $cx-button-mods: cx-deep-map-merge($cx-button-mods, (
@@ -91,7 +92,7 @@ $grid-header-state-style-map: cx-merge-state-style-maps(
 
 @include cx-grid('gridHeader', $grid-header-state-style-map);
 
-//ovdje custom klase
+//custom classes
 .cxb-svg {
     height: 100%;
 }

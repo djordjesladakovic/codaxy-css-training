@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
 
+$default-size: 8px;
+
 .main {
     display: flex;
     height: 100vh;
-    gap: 5px;
+    gap: $default-size;
     background: #FFF;
     font-family: 'Quicksand', 'Courier New';
     font-size: 16px;
@@ -20,8 +22,8 @@
         "content1 content1 content-space content2"
         "content3 content4 content-space content5"
         "content6 content6 content6 content6";
-    grid-gap: 32px;
-    padding: 30px;
+    grid-gap: $default-size * 4;
+    padding: $default-size * 8 $default-size * 9;
 }
 
 #sidebar {
@@ -34,12 +36,12 @@
 
     display: flex;
     flex-direction: column;
-    padding: 16px 24px;
+    padding: $default-size * 2 $default-size * 3;
 
     .sidebar-header {
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: $default-size;
         flex: 1;
     }
 
@@ -47,8 +49,8 @@
         display: flex;
         flex-direction: column;
         border-top: 1px solid rgba(209, 211, 212, 0.2);
-        padding-top: 10px;
-        gap: 16px;
+        padding-top: $default-size;
+        gap: $default-size * 2;
         font-weight: 600;
 
         .sidebar-theme {
@@ -66,14 +68,14 @@
         .sidebar-help {
             font-size: 15px;
             color: #535763;
-            padding-left: 8px;
+            padding-left: $default-size;
         }
 
         .sidebar-theme-switch {
             margin: 0px 4px;
-            padding: 6px;
+            padding: $default-size;
             text-align: center;
-            border-radius: 32px;
+            border-radius: $default-size * 4;
             flex: 1;
         }
 
@@ -97,15 +99,15 @@
         }
         .company-name {
             flex: 2;
-            margin-top: 16px;
-            margin-left: 8px;
+            margin-top: $default-size * 2;
+            margin-left: $default-size;
         }
         .collapse {
             flex: 0.7;
-            margin-top: 16px;
+            margin-top: $default-size * 2;
             border-left: 3px solid #F0F0F0;
             padding-top: 4px;
-            padding-left: 10px;
+            padding-left: $default-size;
         }
     }
 
@@ -114,7 +116,7 @@
         flex-direction: row;
         align-items: center;
 
-        margin-top: 16px;
+        margin-top: $default-size * 2;
 
         .user-photo {
             flex: 1;
@@ -139,7 +141,7 @@
     .sidebar-item {
         display: flex;
         align-items: center;
-        padding: 8px;
+        padding: $default-size;
         border-radius: 8px;
         color: #535763;
         font-weight: 600;
@@ -160,7 +162,7 @@
             border-radius: 4px;
             font-weight: 600;
             font-size: 10px;
-            padding: 4px 8px;
+            padding: $default-size / 2 $default-size;
         }
         .sidebar-number-blue {
             background: #B1E5FC;
@@ -193,7 +195,7 @@
         flex: 3;
         display: flex;
         flex-direction: column;
-        padding: 24px 20% 24px 32px; 
+        padding: $default-size * 3 20% $default-size * 3 $default-size * 4; 
     }
 }
 
@@ -205,11 +207,11 @@
         flex: 1;
         display: flex;
         flex-direction: column;
-        padding: 32px 0 24px 32px; 
+        padding: $default-size * 4 0 $default-size * 3 $default-size * 4; 
     }
     .chart {
         flex: 2;
-        padding: 10px 36px 10px 0px;
+        padding: $default-size $default-size * 4 $default-size 0px;
     }
 }
 
@@ -226,12 +228,12 @@
         font-size: 20px;
         font-family: 'Muli';
         font-weight: bold;
-        padding: 32px 32px 0px 32px;
+        padding: $default-size * 4 $default-size * 4 0px $default-size * 4;
     }
     .bulletpoint-text::before {
         content: "•";
         color: #E795A1;
-        padding: 0 10px;
+        padding: 0 $default-size;
     }
     .bulletpoint-detail {
         margin: 20px 60px;
@@ -260,7 +262,7 @@
     flex-direction: column;
 
     .table-info {
-        padding: 16px 24px 24px 24px;
+        padding: $default-size * 2 $default-size * 3 $default-size * 3 $default-size * 3;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -279,6 +281,13 @@
         height: 50px;
         width: 100%;
     }
+    #sidebar .sidebar-header {
+        display: none;
+    }
+
+    #sidebar .sidebar-footer {
+        display: none;
+    }
     .contents {
         margin-top: 50px;
         grid-template-columns: 1fr;
@@ -291,6 +300,7 @@
             "content5"
             "content6";
         height: 400vh;
+        padding: 64px 32px;
 
         #content1 {
             flex-direction: column;

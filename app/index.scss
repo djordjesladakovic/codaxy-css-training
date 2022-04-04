@@ -1,7 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+
+@import "color-variables";
+
 $cx-include-global-rules: true;
 
-//variables
 
+//variables
+//local variables
+
+$default-size: 8px;
+$white-background: #FFF;
+
+//cx variables
+//fonts
+//local
+$font-size-small: 12px;
+$font-size-large: 20px;
+$font-family-title: 'Muli', sans-serif;
+//cx
+$cx-default-font-size: 16px;
+$cx-default-font-family: 'Quicksand', sans-serif;
+
+$box-shadow: 0px 5px 15px 0px $color-gray-15;
+
+$border-radius: 4px;
 
 $cx-default-palette-colors: rgb(228, 36, 46) rgb(71, 18, 218) rgb(215, 221, 204) rgba(103, 58, 183, 1)
    rgb(11, 15, 39) rgb(128, 155, 177) rgba(3, 169, 244, 1) rgba(0, 188, 212, 1) rgba(0, 150, 136, 1)
@@ -19,6 +42,11 @@ $cx-default-grid-data-alternate-background-color: #8686860D;
 $cx-default-border-color: #E9EDF5;
 $cx-default-grid-data-padding: 10px;
 
+//button
+$cx-default-button-font-size: 14px;
+$cx-default-button-border-radius: $border-radius;
+$cx-default-button-padding: $default-size 2 * $default-size;
+
 @import "~cx/src/variables";
 
 //maps
@@ -27,25 +55,25 @@ $cx-default-grid-data-padding: 10px;
 $cx-button-mods: cx-deep-map-merge($cx-button-mods, (
 	primary: (
 		default: (
-            width: 150px,
-            background: #397289,
-            border-radius: 5px,
+            background-color: $primary-color-80,
             color: white,
-            font-size: 14px,
-            height: 32px,
             position: inherit,
         ),
         hover: (
-            background: #3c85a1,
+            background-color: $primary-color-60,
         ),
         active: (
-            background: #3b9dc4,
+            background-color: $primary-color-40,
+        ),
+        focus: (
+            background-color: $primary-color-100,
+            box-shadow: none,
         )
     ), 
     secondary: (
         default: (
             width: 150px,
-            background: #FFF,
+            background-color: #FFF,
             border: 1px solid #397289,
             border-radius: 5px,
             color: #397289,
@@ -54,10 +82,10 @@ $cx-button-mods: cx-deep-map-merge($cx-button-mods, (
             position: inherit,
         ),
         hover: (
-            background: #e3e3e4,
+            background-color: #e3e3e4,
         ),
         active: (
-            background: #c1c2c2,
+            background-color: #c1c2c2,
         )
     ),
     hollow: (
@@ -71,7 +99,7 @@ $cx-button-mods: cx-deep-map-merge($cx-button-mods, (
     )
 ));
 
-$grid-header-state-style-map: cx-merge-state-style-maps(
+$cx-grid-header-state-style-map: cx-deep-map-merge(
     $cx-grid-header-state-style-map, (
         default: (
             border-bottom: 1px solid $cx-default-border-color,
@@ -90,11 +118,15 @@ $grid-header-state-style-map: cx-merge-state-style-maps(
 
 @import "~cx/src/index";
 
-@include cx-grid('gridHeader', $grid-header-state-style-map);
+// @include cx-grid('gridHeader', $grid-header-state-style-map);
 
-//custom classes
+//override
 .cxb-svg {
     height: 100%;
+}
+
+.cxb-button {
+    width: fit-content;
 }
 
 @import "components/index";

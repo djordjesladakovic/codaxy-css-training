@@ -1,5 +1,5 @@
 import { Controller } from "cx/ui";
-var show = true;
+
 var categories = [
     "Jan",
     "Feb",

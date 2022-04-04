@@ -120,31 +120,27 @@ export default (
                         </div>
                     </div>
                 </div>
-                <div class="contents"> 
+                <div class="dashboard"> 
 
-                    <div class="content" id="content1">
-                        <div class="picture"></div>
-                        <div class="info">
-                            <div style="font-size: 12px;">Author name</div>
-                            <div style="margin-top: 8px;" class="header">The best way to learn CSS is by building something</div>
-                            <div style="margin-top: 24px;" class="detailed-info">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor nesto nesto nesto nesto nesto123
-                            </div>
-                            <Button mod="primary" style="margin-top: 24px;">Build something</Button>
-                        </div>
+                    <div class="dashboardcard" id="content1">
+                        <div class="dashboardcard_image"></div>
+                        <article class="dashboardcard_content post">
+                            <div class="post_author" text="Author name" />
+                            <h3 class="post_title" text="The best way to learn CSS is by building something" />
+                            <p class="post_text" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor nesto nesto nesto nesto nesto123 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor nesto nesto nesto nesto nesto123 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor nesto nesto nesto nesto nesto123"/>
+                            <Button mod="primary" class="post_button" text="Build something" />
+                        </article>
                     </div>
 
                     <div id="content-space"></div>
 
-                    <div class="content" id="content2">
-                        <div class="line-chart-details">
-                            <div class="header">Line chart</div>
-                            <div style="margin-top: 24px; -webkit-line-clamp: 3;" class="detailed-info">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor nesto nesto nesto nesto nesto123
-                            </div>
-                            <Button mod="secondary" style="margin-top: 36px;">See Analysis</Button>
+                    <div class="dashboardcard" id="content2">
+                        <div class="dashboardcard_content post">
+                            <h3 class="post_title" text="Line chart" />
+                            <p class="post_text" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor nesto nesto nesto nesto nesto123" />
+                            <Button mod="secondary" class="post_button">See Analysis</Button>
                         </div>
-                        <div class="chart">
+                        <div class="post_chart">
                             <Svg>
                                 <Chart offset="20 -10 -40 40" axes={{ x: { type: NumericAxis }, y: { type: NumericAxis, vertical: true } }}>
                                     <Gridlines/>
@@ -156,7 +152,7 @@ export default (
                         </div>
                     </div>
 
-                    <div class="content" id="content3">
+                    <div class="dashboardcard" id="content3">
                         <div class="bulletpoint-text">
                             Some random text instead of a really long title
                         </div>
@@ -168,7 +164,7 @@ export default (
                         <Button mod="hollow">Read More</Button>
                     </div>
 
-                    <div class="content" id="content4">
+                    <div class="dashboardcard" id="content4">
                         <div class="bulletpoint-text">
                                 Some random text instead of a really long title
                             </div>
@@ -179,7 +175,7 @@ export default (
                             </div>
                             <Button mod="hollow">Read More</Button>
                         </div>
-                    <div class="content" id="content5">
+                    <div class="dashboardcard" id="content5">
                         <div class="line-chart-details">
                             <div class="header">Bar chart</div>
                             <div style="margin-top: 24px; -webkit-line-clamp: 3;" class="detailed-info">
@@ -239,7 +235,7 @@ export default (
                             </Svg>
                         </div>
                     </div>
-                    <div class="content" id="content6">
+                    <div class="dashboardcard" id="content6">
                         <div class="table-info">
                             <div class="header">
                                 Customer Overview
@@ -247,7 +243,7 @@ export default (
                             <Button mod="secondary">Add Customer</Button>
                         </div>
                         <div class="table">
-                            <Grid baseClass="gridHeader"
+                            <Grid
                                 records-bind="$page.records"
                                 mod="responsive"
                                 scrollable

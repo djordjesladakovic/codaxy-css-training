@@ -1,24 +1,16 @@
-@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
-
-$default-size: 8px;
-
 .main {
     display: flex;
-    height: 100vh;
-    min-height: 900px;
+    height: 100%;
     gap: $default-size;
-    background: #FFF;
-    font-family: 'Quicksand', 'Courier New';
-    font-size: 16px;
+    background: $white-background;
 }
 
-.contents {
-    flex: 6;
+.dashboard {
+    flex: 1;
     display: grid;
-    background: #FFF;
+    background: $white-background;
     grid-template-columns: 1.5fr 1.5fr 32px 2fr;
-    grid-template-rows: 1fr 1fr 1.6fr;
+    grid-template-rows: repeat(2, minmax(180px, 240px)) minmax(600px, 900px);
     grid-template-areas: 
         "content1 content1 content-space content2"
         "content3 content4 content-space content5"
@@ -28,8 +20,9 @@ $default-size: 8px;
 }
 
 #sidebar {
-    flex: 1;
-    background: #FFFFFF;
+    flex: none;
+    width: 280px;
+    background: $white-background;
     grid-area: sidebar;
     border-radius: 4px;
     box-shadow: 0px 5px 15px 0px #00000026;
@@ -81,11 +74,11 @@ $default-size: 8px;
         }
 
         .sidebar-theme-switch:hover {
-            background: #FFF;
+            background: $white-background;
         }
 
         .sidebar-theme-active {
-            background: #FFF;
+            background: $white-background;
         }
 
     }
@@ -191,8 +184,6 @@ $default-size: 8px;
         flex: unset;
         width: 50px;
         transition: all 0.2s;
-        #sidebar {
-        }
         .company-info {
             flex-direction: column;
         }
@@ -227,28 +218,62 @@ $default-size: 8px;
     }
 }
 
-.content {
-    background: #FFFFFF;
+.dashboardcard {
+    background: $white-background;
     border-radius: 4px;
-    box-shadow: 0px 5px 15px 0px #00000026;
+    box-shadow: $box-shadow;
+
+    &_image {
+        flex: none;
+        width: $default-size * 30;
+        background-image: url('/assets/picture1.png');
+        background-size: cover;
+    }
+    &_content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        padding: 3 * $default-size  4 * $default-size 3 * $default-size 4 * $default-size; 
+    }    
+}
+
+.post {
+    $post-title-font-family: $font-family-title;
+    $post-title-font-size: $font-size-large;
+    &_author {
+        font-size: $font-size-small;
+    }
+    
+    &_title {
+        margin: $default-size 0 0 0;
+        font-size: $post-title-font-size;
+        font-family: $post-title-font-family;
+        font-weight: bold;
+    }
+
+    &_text {
+        margin-top: 3 * $default-size;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden; 
+        text-overflow: ellipsis; 
+    }
+
+    &_button {
+        margin-top: auto;
+    }
+    &_chart {
+        flex: 2;
+        padding: $default-size $default-size * 4 $default-size 0px;
+    }
 }
 
 #content1 {
     grid-area: content1;
-
     display: flex;
-    .picture {
-        flex: 1.4;
-        background-image: url('/assets/picture1.png');
-        background-size: cover;
-    }
-    .info {
-        flex: 3;
-        display: flex;
-        flex-direction: column;
-        padding: $default-size * 3 20% $default-size * 3 $default-size * 4; 
-    }
 }
+
 
 #content2, #content5 {
     grid-area: content2;
@@ -340,9 +365,9 @@ $default-size: 8px;
     .main {
         height: 400vh;
     }
-    .contents {
+    .dashboard {
         display: grid;
-        background: #FFF;
+        background: $white-background;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1f 1fr;
         grid-template-areas: 
@@ -370,9 +395,8 @@ $default-size: 8px;
     #sidebar .sidebar-footer {
         display: none;
     }
-    .contents {
-        margin-top: 50px;
-        grid-template-columns: 1fr;
+    .dashboard {
+        margin-top: $default-size * 5;
         grid-template-rows: 0.2fr 0.2fr 0.1fr 0.2fr 0.2fr 1fr;
         grid-template-areas: 
             "content1"
@@ -382,48 +406,28 @@ $default-size: 8px;
             "content5"
             "content6";
         height: 600vh;
-        padding: 64px 32px;
+        padding: 8 * $default-size 4 * $default-size;
 
-        #content1 {
+        #content1, #content2, #content5 {
             flex-direction: column;
-            .picture {
-                height: 250px;
-                flex: none;
-            }
-        }
-        .detailed-info {
-            padding-right: 15%;
-        }
-
-        #content2, #content5 {
-            flex-direction: column;
-            .chart {
-                flex: none;
-                padding: 0;
-                height: 250px;
-                order: 1;
-                z-index: 1;
-            }
-            .line-chart-details {
-                order: 2;
-            }
         }
     }  
-}
 
-.header {
-    font-size: 20px;
-    font-family: 'Muli';
-    font-weight: bold;
-}
+    .dashboardcard {
+        &_content {
+            padding: $default-size * 4;
+            order: 2;
+        }   
+    }
 
-.detailed-info {
-    padding-right: 25%; 
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden; 
-    text-overflow: ellipsis; 
+    .post {
+        &_chart {
+            flex: none;
+            padding: $default-size * 2;
+            height: 250px;
+            order: 1;
+        }
+    }
 }
 
 .icon-margin {

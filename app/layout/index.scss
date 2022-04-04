@@ -6,6 +6,7 @@ $default-size: 8px;
 .main {
     display: flex;
     height: 100vh;
+    min-height: 900px;
     gap: $default-size;
     background: #FFF;
     font-family: 'Quicksand', 'Courier New';
@@ -274,6 +275,26 @@ $default-size: 8px;
     }
 }
 
+@media only screen and (max-width: 1300px) {
+    .main {
+        height: 400vh;
+    }
+    .contents {
+        display: grid;
+        background: #FFF;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1f 1fr;
+        grid-template-areas: 
+            "content1"
+            "content2"
+            "content3"
+            "content4"
+            "content5"
+            "content6";
+        grid-gap: $default-size * 4;
+        padding: $default-size * 8 $default-size * 9;
+    }
+}
 
 @media only screen and (max-width: 900px) {
     #sidebar {
@@ -299,7 +320,7 @@ $default-size: 8px;
             "content4"
             "content5"
             "content6";
-        height: 400vh;
+        height: 600vh;
         padding: 64px 32px;
 
         #content1 {

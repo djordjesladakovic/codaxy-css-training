@@ -135,12 +135,12 @@ export default (
                     <div id="content-space"></div>
 
                     <div class="dashboardcard" id="content2">
-                        <div class="dashboardcard_content post">
+                        <article class="dashboardcard_content post">
                             <h3 class="post_title" text="Line chart" />
                             <p class="post_text" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor nesto nesto nesto nesto nesto123" />
                             <Button mod="secondary" class="post_button">See Analysis</Button>
-                        </div>
-                        <div class="post_chart">
+                        </article>
+                        <div class="dashboardcard_chart">
                             <Svg>
                                 <Chart offset="20 -10 -40 40" axes={{ x: { type: NumericAxis }, y: { type: NumericAxis, vertical: true } }}>
                                     <Gridlines/>
@@ -153,37 +153,37 @@ export default (
                     </div>
 
                     <div class="dashboardcard" id="content3">
-                        <div class="bulletpoint-text">
-                            Some random text instead of a really long title
-                        </div>
-                        <div class="bulletpoint-detail">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor nesto nesto nesto nesto nesto123
-                            sed do eiusmod tempor nesto nesto nesto nesto nesto123
-                            sed do eiusmod tempor nesto nesto nesto nesto nesto123
-                        </div>
-                        <Button mod="hollow">Read More</Button>
-                    </div>
-
-                    <div class="dashboardcard" id="content4">
-                        <div class="bulletpoint-text">
-                                Some random text instead of a really long title
-                            </div>
-                            <div class="bulletpoint-detail">
+                        <article class="dashboardcard_content post">
+                            <div class="post_pointtitle" text="Some random text instead of a really long title" />
+                            <div class="post_pointdetail">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor nesto nesto nesto nesto nesto123
                                 sed do eiusmod tempor nesto nesto nesto nesto nesto123
                                 sed do eiusmod tempor nesto nesto nesto nesto nesto123
                             </div>
                             <Button mod="hollow">Read More</Button>
-                        </div>
+                        </article>
+                    </div>
+
+                    <div class="dashboardcard" id="content4">
+                        <article class="dashboardcard_content post">
+                            <div class="post_pointtitle" text="Some random text instead of a really long title" />
+                            <div class="post_pointdetail">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor nesto nesto nesto nesto nesto123
+                                sed do eiusmod tempor nesto nesto nesto nesto nesto123
+                                sed do eiusmod tempor nesto nesto nesto nesto nesto123
+                            </div>
+                            <Button mod="hollow">Read More</Button>
+                        </article>
+                    </div>
                     <div class="dashboardcard" id="content5">
-                        <div class="line-chart-details">
-                            <div class="header">Bar chart</div>
-                            <div style="margin-top: 24px; -webkit-line-clamp: 3;" class="detailed-info">
+                        <article class="dashboardcard_content post">
+                            <div class="post_title" text="Bar chart" />
+                            <div class="post_text">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor nesto nesto nesto nesto nesto123
                             </div>
                             <Button mod="secondary" style="margin-top: 36px;">See Analysis</Button>
-                        </div>
-                        <div class="chart">
+                        </article>
+                        <div class="dashboardcard_chart">
                             <Svg>
                                 <Chart
                                 offset="20 -20 -40 40"
@@ -236,13 +236,13 @@ export default (
                         </div>
                     </div>
                     <div class="dashboardcard" id="content6">
-                        <div class="table-info">
-                            <div class="header">
+                        <div class="dashboardcard_content post table_info">
+                            <div class="post_title">
                                 Customer Overview
                             </div>
                             <Button mod="secondary">Add Customer</Button>
                         </div>
-                        <div class="table">
+                        <div class="dashboardcard_table">
                             <Grid
                                 records-bind="$page.records"
                                 mod="responsive"

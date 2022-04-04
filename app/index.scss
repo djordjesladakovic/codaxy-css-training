@@ -16,6 +16,7 @@ $white-background: #FFF;
 //fonts
 //local
 $font-size-small: 12px;
+$font-size-medium: 14px;
 $font-size-large: 20px;
 $font-family-title: 'Muli', sans-serif;
 //cx
@@ -90,10 +91,9 @@ $cx-button-mods: cx-deep-map-merge($cx-button-mods, (
     ),
     hollow: (
         default: (
-            background: none,
+            background-color: none,
             align-self: flex-end,
-            margin: 10px 32px,
-            font-size: 14px,
+            font-size: $font-size-medium,
             color: #397289,
         )
     )

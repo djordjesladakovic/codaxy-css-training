@@ -10,7 +10,7 @@
     display: grid;
     background: $white-background;
     grid-template-columns: 1.5fr 1.5fr 32px 2fr;
-    grid-template-rows: repeat(2, minmax(180px, 240px)) minmax(600px, 900px);
+    grid-template-rows: repeat(2, minmax(180px, 260px)) minmax(600px, 900px);
     grid-template-areas: 
         "content1 content1 content-space content2"
         "content3 content4 content-space content5"
@@ -235,6 +235,11 @@
         flex-direction: column;
         padding: 3 * $default-size  4 * $default-size 3 * $default-size 4 * $default-size; 
     }    
+
+    &_chart {
+        flex: 2;
+        padding: $default-size $default-size * 4 $default-size 0px;
+    }
 }
 
 .post {
@@ -263,9 +268,27 @@
     &_button {
         margin-top: auto;
     }
-    &_chart {
-        flex: 2;
-        padding: $default-size $default-size * 4 $default-size 0px;
+
+    &_pointtitle {
+        display: flex;
+        font-size: $post-title-font-size;
+        font-family: $post-title-font-family;
+        font-weight: bold;
+    }
+    &_pointtitle::before {
+        content: "•";
+        color: $color-pink-80;
+        padding: 0 $default-size;
+    }
+
+    &_pointdetail {
+        margin: 3 * $default-size 3 * $default-size;
+
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden; 
+        text-overflow: ellipsis; 
     }
 }
 
@@ -277,49 +300,11 @@
 
 #content2, #content5 {
     grid-area: content2;
-
     display: flex;
-    .line-chart-details {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        padding: $default-size * 4 0 $default-size * 3 $default-size * 4; 
-    }
-    .chart {
-        flex: 2;
-        padding: $default-size $default-size * 4 $default-size 0px;
-    }
 }
 
 #content3 {
     grid-area: content3;
-}
-
-#content3, #content4 {
-
-    display: flex;
-    flex-direction: column;
-    .bulletpoint-text {
-        display: flex;
-        font-size: 20px;
-        font-family: 'Muli';
-        font-weight: bold;
-        padding: $default-size * 4 $default-size * 4 0px $default-size * 4;
-    }
-    .bulletpoint-text::before {
-        content: "•";
-        color: #E795A1;
-        padding: 0 $default-size;
-    }
-    .bulletpoint-detail {
-        margin: 20px 60px;
-
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        overflow: hidden; 
-        text-overflow: ellipsis; 
-    }
 }
 
 #content4 {
@@ -336,21 +321,16 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
-
-    .table-info {
-        padding: $default-size * 2 $default-size * 3 $default-size * 3 $default-size * 3;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    .table { 
-        overflow: hidden;
-        display: flex;
-    }
 }
 
-@media only screen and (max-width: 1300px) {
+.table_info {
+    padding: $default-size * 2 $default-size * 3 $default-size * 3 $default-size * 3;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+@media only screen and (max-width: 1500px) {
     .collapse {
         display: none;
     }
@@ -362,14 +342,11 @@
         }
     }
 
-    .main {
-        height: 400vh;
-    }
     .dashboard {
         display: grid;
         background: $white-background;
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1f 1fr;
+        grid-template-rows: repeat(5, minmax(180px, 260px)) minmax(600px, 900px);
         grid-template-areas: 
             "content1"
             "content2"
@@ -379,6 +356,12 @@
             "content6";
         grid-gap: $default-size * 4;
         padding: $default-size * 8 $default-size * 9;
+    }
+
+    .post {
+        &_text {
+            margin-top: $default-size;
+        }
     }
 }
 
@@ -397,7 +380,7 @@
     }
     .dashboard {
         margin-top: $default-size * 5;
-        grid-template-rows: 0.2fr 0.2fr 0.1fr 0.2fr 0.2fr 1fr;
+        grid-template-rows: 0.1fr 0.2fr 0.1fr 0.1fr 0.2fr 1fr;
         grid-template-areas: 
             "content1"
             "content2"
@@ -415,18 +398,23 @@
 
     .dashboardcard {
         &_content {
-            padding: $default-size * 4;
+            padding: 2 * $default-size 4 * $default-size 3 * $default-size 4 * $default-size;
             order: 2;
         }   
-    }
 
-    .post {
         &_chart {
             flex: none;
             padding: $default-size * 2;
             height: 250px;
             order: 1;
         }
+
+        &_table {
+            order: 2;
+        }
+    }
+    .table_info {
+        order: 1;
     }
 }
 

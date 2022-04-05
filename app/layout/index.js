@@ -7,115 +7,97 @@ import {
     Gridlines,
     LineGraph,
     NumericAxis,
-
     CategoryAxis,
-    ColumnGraph,
     Column,
-    Legend,
   } from "cx/charts";
 
 export default (
     <cx>
         <div controller={Controller}>
             <div class="main">
-                <div id="sidebar" class={{hiddable: {bind: 'hiddable'}}}>
-                    <div class="sidebar-logo">
-                        <div class="company-info">
-                            <div class="logo">
+                <div class={{hiddable: {bind: 'hiddable'}}} className="sidebar">
+                    <div class="sidebar_logo">
+                        <div class="company">
+                            <div class="company_logo">
                                 <img src="/assets/logo.png"></img>
                             </div>
-                            <div class="company-name hiddable">
+                            <div class="company_name hiddable">
                                 <img src="/assets/company-name.png"></img>
                             </div>
                             <div class="collapse" onClick={(event, {store}) => {
-                                    console.log('caooo')
                                     store.toggle('hiddable');
                                 }}>
                                 <img src="/assets/left-arrow.png"></img>
                             </div>
                         </div>
                     </div>    
-                    <div class="sidebar-header">    
-                        <div class="user-info">
-                            <div class="user-photo">
+                    <div class="sidebar_header">    
+                        <div class="user">
+                            <div class="user_photo">
                                 <img src="/assets/avatar.png"></img>
                             </div>
-                            <div class="user-details hiddable">
-                                <span class="user-name">Zika Pavlovic</span>
-                                <span class="user-email">zikapavlovic@gmail.com</span>
+                            <div class="user_details hiddable">
+                                <span class="user_name">Zika Pavlovic</span>
+                                <span class="user_email">zikapavlovic@gmail.com</span>
                             </div>
                         </div>
-                        <div class="sidebar-item active">
-                            <div class="sidebar-item-details">
-                                <i class="fa-solid fa-calendar icon-margin"></i>
-                                <div class="hiddable">
-                                    <span>Dashboard</span>
-                                    <span class="sidebar-number sidebar-number-blue">2</span>
-                                </div>
+                        <div class="navitem active">
+                            <i class="fa-solid fa-calendar icon_margin"></i>
+                            <div class="hiddable">
+                                <span>Dashboard</span>
+                                <span class="navitem_number navitem_blue">2</span>
                             </div>
                         </div>
-                        <div class="sidebar-item">
-                            <div class="sidebar-item-details">
-                                <i class="fa-solid fa-award icon-margin"></i>
-                                <div class="hiddable">
-                                    <span>Rewards</span>
-                                    <span class="sidebar-number sidebar-number-red">2</span>
-                                </div>
+                        <div class="navitem">
+                            <i class="fa-solid fa-award icon_margin"></i>
+                            <div class="hiddable">
+                                <span>Rewards</span>
+                                <span class="navitem_number navitem_red">2</span>
                             </div>
                         </div>
-                        <div class="sidebar-item">
-                            <div class="sidebar-item-details">
-                                <i class="fa-solid fa-location-dot icon-margin"></i>
-                                <div class="hiddable">
-                                    <span>Address</span>
-                                </div>
+                        <div class="navitem">
+                            <i class="fa-solid fa-location-dot icon_margin"></i>
+                            <div class="hiddable">
+                                <span>Address</span>
+                            </div>
+                        </div>    
+                        <div class="navitem">
+                            <i class="fa-solid fa-wallet icon_margin"></i>
+                            <div class="hiddable">
+                                <span>Payment Methods</span>
                             </div>
                         </div>
-                        <div class="sidebar-item">
-                            <div class="sidebar-item-details">
-                                <i class="fa-solid fa-wallet icon-margin"></i>
-                                <div class="hiddable">
-                                    <span>Payment Methods</span>
-                                </div>
+                        <div class="navitem">
+                            <i class="fa-solid fa-percent icon_margin"></i>
+                            <div class="hiddable">
+                                <span>Offers</span>
+                                <span class="navitem_number navitem_green">2</span>
                             </div>
                         </div>
-                        <div class="sidebar-item">
-                            <div class="sidebar-item-details">
-                                <i class="fa-solid fa-percent icon-margin"></i>
-                                <div class="hiddable">
-                                    <span>Offers</span>
-                                    <span class="sidebar-number sidebar-number-green">2</span>
-                                </div>
+                        <div class="navitem">
+                            <i class="fa-solid fa-user-group icon_margin"></i>
+                            <div class="hiddable">
+                                <span>Refer a Friend</span>
                             </div>
                         </div>
-                        <div class="sidebar-item">
-                            <div class="sidebar-item-details">
-                                <i class="fa-solid fa-user-group icon-margin"></i>
-                                <div class="hiddable">
-                                    <span>Refer a Friend</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="sidebar-item">
-                            <div class="sidebar-item-details">
-                            <i class="fa-solid fa-phone icon-margin"></i>
-                                <div class="hiddable">
-                                    <span>Support</span>
-                                </div>
+                        <div class="navitem">
+                        <i class="fa-solid fa-phone icon_margin"></i>
+                            <div class="hiddable">
+                                <span>Support</span>
                             </div>
                         </div>
                     </div>
-                    <div class="sidebar-footer">
-                        <div class="sidebar-help"><i class="fa-regular fa-circle-question icon-margin"></i>Color Scheme</div>
-                        <div class="sidebar-theme">
-                            <div class="sidebar-theme-switch sidebar-theme-active">
-                                <i class="fa-solid fa-sun icon-margin"></i>Light
+                    <div class="sidebar_footer">
+                        <div class="sidebar_help"><i class="fa-regular fa-circle-question icon_margin"></i>Color Scheme</div>
+                        <div class="sidebar_theme">
+                            <div class="sidebar_switch sidebar_active">
+                                <i class="fa-solid fa-sun icon_margin"></i>Light
                             </div>
-                            <div class="sidebar-theme-switch">
-                                <i class="fa-solid fa-moon icon-margin"></i>Dark
+                            <div class="sidebar_switch">
+                                <i class="fa-solid fa-moon icon_margin"></i>Dark
                             </div>
                         </div>
-                        <div class="sidebar-collapse-theme">
+                        <div class="sidebar_collapse">
                             <i class="fa-solid fa-cloud-sun"></i>
                         </div>
                     </div>
@@ -237,9 +219,9 @@ export default (
                     </div>
                     <div class="dashboardcard" id="content6">
                         <div class="dashboardcard_content post table_info">
-                            <div class="post_title">
+                            <h3 class="post_title">
                                 Customer Overview
-                            </div>
+                            </h3>
                             <Button mod="secondary">Add Customer</Button>
                         </div>
                         <div class="dashboardcard_table">

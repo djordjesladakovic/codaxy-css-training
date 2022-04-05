@@ -1,6 +1,5 @@
 .main {
     display: flex;
-    height: 100%;
     gap: $default-size;
     background: $white-background;
 }
@@ -10,7 +9,7 @@
     display: grid;
     background: $white-background;
     grid-template-columns: 1.5fr 1.5fr 32px 2fr;
-    grid-template-rows: repeat(2, minmax(180px, 260px)) minmax(600px, 900px);
+    grid-template-rows: repeat(2, minmax(200px, 250px)) minmax(600px, 900px);
     grid-template-areas: 
         "content1 content1 content-space content2"
         "content3 content4 content-space content5"
@@ -19,158 +18,152 @@
     padding: $default-size * 8 $default-size * 9;
 }
 
-#sidebar {
-    flex: none;
-    width: 280px;
-    background: $white-background;
+.sidebar {
     grid-area: sidebar;
-    border-radius: 4px;
-    box-shadow: 0px 5px 15px 0px #00000026;
-    z-index: 2;
-
     display: flex;
     flex-direction: column;
     padding: $default-size * 2 $default-size * 3;
+    flex: none;
 
-    .sidebar-header {
+    width: 280px;
+    background: $white-background;
+    border-radius: 4px;
+    box-shadow: $box-shadow;
+    z-index: 2;
+    transition: all 0.1s;
+
+    &_header {
         display: flex;
         flex-direction: column;
         gap: $default-size;
         flex: 1;
     }
 
-    .sidebar-footer {
+    &_footer {
         display: flex;
         flex-direction: column;
-        border-top: 1px solid rgba(209, 211, 212, 0.2);
+        border-top: 1px solid $color-gray-100;
         padding-top: $default-size;
         gap: $default-size * 2;
-        font-weight: 600;
-
-        .sidebar-theme {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-
-            height: 40px;
-
-            border-radius: 40px;
-            background: #F0F0F0;
-
-        }
-
-        .sidebar-help {
-            font-size: 15px;
-            color: #535763;
-            padding-left: $default-size;
-        }
-
-        .sidebar-theme-switch {
-            margin: 0px 4px;
-            padding: $default-size;
-            text-align: center;
-            border-radius: $default-size * 4;
-            flex: 1;
-        }
-
-        .sidebar-theme-switch:hover {
-            background: $white-background;
-        }
-
-        .sidebar-theme-active {
-            background: $white-background;
-        }
-
+        font-weight: $font-weight-bold;
     }
 
-    .company-info {
+    &_help {
+        font-size: 15px;
+        color: #535763;
+        padding-left: $default-size;
+    }
+
+    &_theme {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: 5 * $default-size;
+        border-radius: 5 * $default-size;
+        background: $color-gray-10;
+    }
+
+    &_switch {
+        margin: 0 $default-size / 2;
+        padding: $default-size;
+        text-align: center;
+        border-radius: 4 * $default-size;
+        flex: 1;
+    }
+
+    &_switch:hover {
+        background: $white-background;
+    }
+
+    &_active {
+        background: $white-background;
+    }
+
+    .company {
         display: flex;
         flex-direction: row;
         align-items: center;
 
-        .logo {
-            flex: 0.7;
+        &_logo {
+            flex: none;
         }
-        .company-name {
+
+        &_name {
             flex: 2;
             margin-top: $default-size * 2;
             margin-left: $default-size;
         }
-        .collapse {
-            flex: 0.7;
-            margin-top: $default-size * 2;
-            border-left: 3px solid #F0F0F0;
-            padding-top: 4px;
-            padding-left: $default-size;
-        }
     }
 
-    .user-info {
+    .collapse {
+        flex: 0.7;
+        margin-top: $default-size * 2;
+        border-left: $default-size / 2 solid #F0F0F0;
+        padding-top: $default-size / 2;
+        padding-left: $default-size;
+    }
+
+    .user {
         display: flex;
         flex-direction: row;
         align-items: center;
 
         margin-top: $default-size * 2;
 
-        .user-photo {
-            flex: 1;
+        &_photo {
+            flex: none;
+            width: 7 * $default-size;
         }
-        .user-details {
+        &_details {
             display: flex;
             flex-direction: column;
             flex: 3;
         }
-        .user-name {
-            color: #1A1B2D;
-            font-weight: 600;
-            font-size: 15px;
+        &_name {
+            color: $color-blue-100;
+            font-weight: $font-weight-bold;
+            font-size: $font-size-large;
         }
-        .user-email {
-            font-size: 12px;
-            font-weight: 500;
-            color: #535763;
+        &_email {
+            font-size: $font-size-small;
+            font-weight: $font-weight-medium;
+            color: $color-gray-90;
         }
     }
 
-    .sidebar-item {
-        display: flex;
-        align-items: center;
-        padding: $default-size;
-        border-radius: 8px;
-        color: #535763;
-        font-weight: 600;
-    }
-
-    .sidebar-item:hover, .active {
-        background: #397289CC;
-        color: white;
+    &_collapse {
+        display: none;
     }
     
-    .sidebar-item-details {
-        flex: 7;
+    .navitem {
         display: flex;
+        padding: $default-size;
+        border-radius: $default-size;
+        color: $color-gray-90;
+        font-weight: $font-weight-bold;
         justify-content: space-between;
-        align-items: center;
-        .sidebar-number {
+
+        &_number {
             color: black;
-            border-radius: 4px;
-            font-weight: 600;
-            font-size: 10px;
+            border-radius: $default-size / 2;
+            font-weight: $font-weight-bold;
+            font-size: $font-size-xs;
             padding: $default-size / 2 $default-size;
         }
-        .sidebar-number-blue {
-            background: #B1E5FC;
+        &_blue {
+            background-color: $number-color-info;
         }
-        .sidebar-number-red {
-            background: #FB9B9B;
+        &_red {
+            background-color: $number-color-danger;
         }
-        .sidebar-number-green {
-            background: #B5EBCD;
+        &_green {
+            background-color: $number-color-success;
         }
     }
 
-    .sidebar-collapse-theme {
-        display: none;
+    .navitem:hover, .active {
+        background-color: $navbar-color;
+        color: white;
     }
 
     .hiddable {
@@ -178,37 +171,28 @@
         width: 100%;
         justify-content: space-between;
     }
-    transition: all 0.1s;
 
     &.hiddable {
         flex: unset;
         width: 50px;
         transition: all 0.2s;
-        .company-info {
+        .company {
             flex-direction: column;
         }
-        .sidebar-logo {
-            .company-name {
-                display: none;
-            }
-        }
-        .sidebar-header {
-            .user-details {
-                display: none;
-            }
-        }
+
         .hiddable {
             display: none;
         }
-        .sidebar-footer {
-            .sidebar-help {
+
+        .sidebar {
+            &_help {
                 display: none;
             }
-            .sidebar-theme {
+            &_theme {
                 display: none;
             }
-            .sidebar-collapse-theme {
-                margin-left: 8px;
+            &_collapse {
+                margin-left: $default-size;
                 border: 1px solid black;
                 border-radius: 50px;
                 display: unset;
@@ -220,7 +204,7 @@
 
 .dashboardcard {
     background: $white-background;
-    border-radius: 4px;
+    border-radius: $default-size / 2;
     box-shadow: $box-shadow;
 
     &_image {
@@ -238,13 +222,13 @@
 
     &_chart {
         flex: 2;
-        padding: $default-size $default-size * 4 $default-size 0px;
+        padding: $default-size $default-size * 4 $default-size 0;
     }
 }
 
 .post {
     $post-title-font-family: $font-family-title;
-    $post-title-font-size: $font-size-large;
+    $post-title-font-size: $font-size-xl;
     &_author {
         font-size: $font-size-small;
     }
@@ -334,19 +318,12 @@
     .collapse {
         display: none;
     }
-    #sidebar {
-        .company-info {
-            .logo {
-                flex: unset;
-            }
-        }
-    }
 
     .dashboard {
         display: grid;
         background: $white-background;
         grid-template-columns: 1fr;
-        grid-template-rows: repeat(5, minmax(180px, 260px)) minmax(600px, 900px);
+        grid-template-rows: repeat(5, minmax(160px, 260px)) minmax(600px, 900px);
         grid-template-areas: 
             "content1"
             "content2"
@@ -366,18 +343,20 @@
 }
 
 @media only screen and (max-width: 900px) {
-    #sidebar {
+    .sidebar {
         position: fixed;
         height: 50px;
         width: 100%;
     }
-    #sidebar .sidebar-header {
-        display: none;
+    .sidebar {
+        &_header {
+            display: none;
+        }
+        &_footer {
+            display: none;
+        }
     }
 
-    #sidebar .sidebar-footer {
-        display: none;
-    }
     .dashboard {
         margin-top: $default-size * 5;
         grid-template-rows: 0.1fr 0.2fr 0.1fr 0.1fr 0.2fr 1fr;
@@ -418,7 +397,7 @@
     }
 }
 
-.icon-margin {
+.icon_margin {
     margin-left: $default-size;
     margin-right: 10px;
 }

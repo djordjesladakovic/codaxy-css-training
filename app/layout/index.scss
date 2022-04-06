@@ -1,15 +1,15 @@
 .main {
     display: flex;
     gap: $default-size;
-    background: $white-background;
+    background-color: $white-background;
 }
 
 .dashboard {
     flex: 1;
     display: grid;
-    background: $white-background;
+    background-color: $white-background;
     grid-template-columns: 1.5fr 1.5fr 32px 2fr;
-    grid-template-rows: repeat(2, minmax(200px, 250px)) minmax(600px, 900px);
+    grid-template-rows: 1fr 1fr minmax(600px, 900px);
     grid-template-areas: 
         "content1 content1 content-space content2"
         "content3 content4 content-space content5"
@@ -26,7 +26,7 @@
     flex: none;
 
     width: 280px;
-    background: $white-background;
+    background-color: $white-background;
     border-radius: 4px;
     box-shadow: $box-shadow;
     z-index: 2;
@@ -60,7 +60,7 @@
         align-items: center;
         height: 5 * $default-size;
         border-radius: 5 * $default-size;
-        background: $color-gray-10;
+        background-color: $color-gray-10;
     }
 
     &_switch {
@@ -72,11 +72,11 @@
     }
 
     &_switch:hover {
-        background: $white-background;
+        background-color: $white-background;
     }
 
     &_active {
-        background: $white-background;
+        background-color: $white-background;
     }
 
     .company {
@@ -84,19 +84,13 @@
         flex-direction: row;
         align-items: center;
 
-        &_logo {
-            flex: none;
-        }
-
         &_name {
-            flex: 2;
             margin-top: $default-size * 2;
             margin-left: $default-size;
         }
     }
 
     .collapse {
-        flex: 0.7;
         margin-top: $default-size * 2;
         border-left: $default-size / 2 solid #F0F0F0;
         padding-top: $default-size / 2;
@@ -108,7 +102,7 @@
         flex-direction: row;
         align-items: center;
 
-        margin-top: $default-size * 2;
+        margin-top: 3 * $default-size;
 
         &_photo {
             flex: none;
@@ -117,7 +111,6 @@
         &_details {
             display: flex;
             flex-direction: column;
-            flex: 3;
         }
         &_name {
             color: $color-blue-100;
@@ -151,13 +144,13 @@
             padding: $default-size / 2 $default-size;
         }
         &_blue {
-            background-color: $number-color-info;
+            background-color: $info-color;
         }
         &_red {
-            background-color: $number-color-danger;
+            background-color: $danger-color;
         }
         &_green {
-            background-color: $number-color-success;
+            background-color: $success-color;
         }
     }
 
@@ -203,13 +196,13 @@
 }
 
 .dashboardcard {
-    background: $white-background;
+    background-color: $white-background;
     border-radius: $default-size / 2;
     box-shadow: $box-shadow;
 
     &_image {
         flex: none;
-        width: $default-size * 30;
+        width: 30 * $default-size;
         background-image: url('/assets/picture1.png');
         background-size: cover;
     }
@@ -222,7 +215,7 @@
 
     &_chart {
         flex: 2;
-        padding: $default-size $default-size * 4 $default-size 0;
+        padding: $default-size 4 * $default-size $default-size 0;
     }
 }
 
@@ -308,22 +301,22 @@
 }
 
 .table_info {
-    padding: $default-size * 2 $default-size * 3 $default-size * 3 $default-size * 3;
+    padding: 2 * $default-size 3 * $default-size 3 * $default-size 3 * $default-size;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
 @media only screen and (max-width: 1500px) {
-    .collapse {
-        display: none;
+    .sidebar {
+        position: unset;
     }
 
     .dashboard {
         display: grid;
-        background: $white-background;
+        background-color: $white-background;
         grid-template-columns: 1fr;
-        grid-template-rows: repeat(5, minmax(160px, 260px)) minmax(600px, 900px);
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr minmax(600px, 900px);
         grid-template-areas: 
             "content1"
             "content2"
@@ -331,8 +324,8 @@
             "content4"
             "content5"
             "content6";
-        grid-gap: $default-size * 4;
-        padding: $default-size * 8 $default-size * 9;
+        grid-gap: 4 * $default-size;
+        padding: 8 * $default-size 9 * $default-size;
     }
 
     .post {
@@ -343,6 +336,11 @@
 }
 
 @media only screen and (max-width: 900px) {
+
+    .collapse {
+        display: none;
+    }
+    
     .sidebar {
         position: fixed;
         height: 50px;
@@ -358,8 +356,8 @@
     }
 
     .dashboard {
-        margin-top: $default-size * 5;
-        grid-template-rows: 0.1fr 0.2fr 0.1fr 0.1fr 0.2fr 1fr;
+        margin-top: 5 * $default-size;
+        grid-template-rows: 250px 460px 230px 230px 460px 600px;
         grid-template-areas: 
             "content1"
             "content2"
@@ -367,7 +365,6 @@
             "content4"
             "content5"
             "content6";
-        height: 600vh;
         padding: 8 * $default-size 4 * $default-size;
 
         #content1, #content2, #content5 {
@@ -383,7 +380,7 @@
 
         &_chart {
             flex: none;
-            padding: $default-size * 2;
+            padding: 2 * $default-size;
             height: 250px;
             order: 1;
         }

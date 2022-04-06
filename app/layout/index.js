@@ -142,7 +142,7 @@ export default (
                                 sed do eiusmod tempor nesto nesto nesto nesto nesto123
                                 sed do eiusmod tempor nesto nesto nesto nesto nesto123
                             </div>
-                            <Button mod="hollow">Read More</Button>
+                            <Button mod="hollow" class="post_button">Read More</Button>
                         </article>
                     </div>
 
@@ -154,7 +154,7 @@ export default (
                                 sed do eiusmod tempor nesto nesto nesto nesto nesto123
                                 sed do eiusmod tempor nesto nesto nesto nesto nesto123
                             </div>
-                            <Button mod="hollow">Read More</Button>
+                            <Button mod="hollow" class="post_button">Read More</Button>
                         </article>
                     </div>
                     <div class="dashboardcard" id="content5">
@@ -163,7 +163,7 @@ export default (
                             <div class="post_text">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor nesto nesto nesto nesto nesto123
                             </div>
-                            <Button mod="secondary" style="margin-top: 36px;">See Analysis</Button>
+                            <Button mod="secondary" class="post_button">See Analysis</Button>
                         </article>
                         <div class="dashboardcard_chart">
                             <Svg>

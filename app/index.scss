@@ -58,45 +58,44 @@ $cx-default-button-padding: $default-size 2 * $default-size;
 $cx-button-mods: cx-deep-map-merge($cx-button-mods, (
 	primary: (
 		default: (
-            background-color: $primary-color-80,
+            background-color: $primary-color-60,
             color: white,
-            position: inherit,
+            border-color: none,
         ),
         hover: (
-            background-color: $primary-color-60,
+            background-color: $primary-color-70,
         ),
         active: (
-            background-color: $primary-color-40,
+            background-color: $primary-color-80,
         ),
         focus: (
-            background-color: $primary-color-100,
+            background-color: $primary-color-70,
             box-shadow: none,
         )
     ), 
     secondary: (
         default: (
-            width: 150px,
-            background-color: #FFF,
-            border: 1px solid #397289,
-            border-radius: 5px,
-            color: #397289,
-            font-size: 14px,
-            height: 32px,
-            position: inherit,
+            background-color: white,
+            border: 1px solid $primary-color-60,
+            color: $primary-color-60,
+            font-weight: $font-weight-medium,
         ),
         hover: (
-            background-color: #e3e3e4,
+            border: 1px solid $primary-color-70,
         ),
         active: (
-            background-color: #c1c2c2,
+            border: 1px solid $primary-color-100,
         )
     ),
     hollow: (
         default: (
-            background-color: none,
+            background-color: white,
             align-self: flex-end,
-            font-size: $font-size-medium,
-            color: #397289,
+            color: $primary-color-60,
+        ),
+        hover: (
+            background-color: white,
+            color: $primary-color-90,
         )
     )
 ));
@@ -125,6 +124,7 @@ $cx-grid-header-state-style-map: cx-deep-map-merge(
 //override
 .cxb-svg {
     height: 100%;
+    min-width: 200px;
 }
 
 .cxb-button {

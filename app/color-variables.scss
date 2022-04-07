@@ -1,21 +1,22 @@
 
 $color-gray-100: hsla(200, 3%, 83%, 0.2);
-$color-gray-90: #535763;
-$color-gray-80: #757982;
-$color-gray-15: #e5e6e8;
-$color-gray-10: #F0F0F0;
+$color-gray-90: hsl(225, 9%, 36%);
+$color-gray-80: hsl(222, 5%, 48%);
+$color-gray-15: hsl(220, 6%, 90%);
+$color-gray-10: hsl(0, 0%, 94%);
 
 $color-blue-100: #1A1B2D;
 
-$primary-color-100: hsl(197, 38%, 32%);
-$primary-color-80: hsl(197, 41%, 38%);
-$primary-color-60: #3c85a1;
-$primary-color-40: #3b9dc4;
+$primary-color-40: hsl(198, 25%, 60%);
+$primary-color-50: hsl(198, 25%, 50%);
+$primary-color-60: hsl(198, 40%, 40%);
+$primary-color-70: hsl(198, 40%, 35%);
+$primary-color-80: hsl(198, 40%, 30%);
+$primary-color-90: hsl(198, 40%, 25%);
+$primary-color-100: hsl(198, 40%, 20%);
 
 $info-color: #B1E5FC; 
 $danger-color: #FB9B9B; 
 $success-color: #B5EBCD; 
-
-$navbar-color: #397289CC;
 
 $color-pink-80: #E795A1;

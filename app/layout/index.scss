@@ -9,7 +9,6 @@
     display: grid;
     background-color: $white-background;
     grid-template-columns: 1.5fr 1.5fr 32px 2fr;
-    grid-template-rows: 1fr 1fr minmax(600px, 900px);
     grid-template-areas: 
         "content1 content1 content-space content2"
         "content3 content4 content-space content5"
@@ -102,7 +101,8 @@
         flex-direction: row;
         align-items: center;
 
-        margin-top: 3 * $default-size;
+        margin-top: 4 * $default-size;
+        margin-bottom: 2 * $default-size;
 
         &_photo {
             flex: none;
@@ -135,6 +135,7 @@
         color: $color-gray-90;
         font-weight: $font-weight-bold;
         justify-content: space-between;
+        align-items: baseline;
 
         &_number {
             color: black;
@@ -155,7 +156,7 @@
     }
 
     .navitem:hover, .active {
-        background-color: $navbar-color;
+        background-color: $primary-color-50;
         color: white;
     }
 
@@ -316,7 +317,6 @@
         display: grid;
         background-color: $white-background;
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr minmax(600px, 900px);
         grid-template-areas: 
             "content1"
             "content2"
@@ -357,7 +357,6 @@
 
     .dashboard {
         margin-top: 5 * $default-size;
-        grid-template-rows: 250px 460px 230px 230px 460px 600px;
         grid-template-areas: 
             "content1"
             "content2"

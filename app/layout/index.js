@@ -1,4 +1,4 @@
-import { Button, Grid } from "cx/widgets";
+import { Button, Grid, PureContainer } from "cx/widgets";
 import { ContentPlaceholder, KeySelection, Repeater } from "cx/ui";
 import Controller from "./Controller";
 import { Svg } from "cx/svg";
@@ -13,7 +13,7 @@ import {
 
 export default (
     <cx>
-        <div controller={Controller}>
+        <PureContainer controller={Controller}>
             <div class="main">
                 <div class={{hiddable: {bind: 'hiddable'}}} className="sidebar">
                     <div class="sidebar_logo">
@@ -244,6 +244,6 @@ export default (
                 </div>
             </div>
             <ContentPlaceholder />
-        </div>
+        </PureContainer>
     </cx>
 );
